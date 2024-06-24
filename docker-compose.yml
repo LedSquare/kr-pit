@@ -14,20 +14,6 @@ services:
     networks:
       - appnet
 
-  vite:
-    container_name: ${PROJECT}_vite
-    image: ${PROJECT}_vite:${TAG}
-    build:
-      context: .
-      dockerfile: docker/vite/Dockerfile.vite
-    ports:
-      - 3000:3000
-    volumes:
-      - ./laravel/:/app
-      - /app/node_modules
-    networks:
-      - appnet
-
   server:
     container_name: ${PROJECT}_nginx
     image: ${PROJECT}_nginx:${TAG}
@@ -53,26 +39,6 @@ services:
       - ./data/db:/var/lib/postgresql/data:rw
     container_name: ${PROJECT}_db
     hostname: db
-    networks:
-      - appnet
-
-
-  redis:
-    build:
-      context: .
-      dockerfile: docker/redis/Dockerfile
-    container_name: ${PROJECT}_redis
-    image: ${PROJECT}_redis:${TAG}
-    hostname: redis
-    restart: unless-stopped
-    ports:
-      - "6380:6379"
-    volumes:
-      - ./data/redis:/root/redis
-    environment:
-      - REDIS_PASSWORD=${REDIS_PASSWORD}
-      - REDIS_PORT=6379
-#      - REDIS_DATABASES=16
     networks:
       - appnet
 
