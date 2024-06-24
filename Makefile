@@ -75,9 +75,7 @@ chmod:
 	docker exec -it php chmod -R 777 
 exec-app:
 	${DOCKER_EXEC_APP} bash
-npm-install:
-	docker exec -it ${PROJECT}_vite npm install 
-
+	
 migrate:
 	${DOCKER_EXEC_APP} php artisan migrate:fresh $(s)
 
