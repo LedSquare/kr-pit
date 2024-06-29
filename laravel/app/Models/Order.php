@@ -44,10 +44,8 @@ class Order extends Model
         return $this->hasMany(FittingDate::class, 'order_id');
     }
 
-
-    public function calculateFinalPrice(): float
+    public function client(): BelongsTo
     {
-
-        return 1;
+        return $this->belongsTo(Client::class, 'client_id');
     }
 }

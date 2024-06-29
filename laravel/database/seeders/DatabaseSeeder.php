@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
             MaterialSeeder::class,
             ClothesModelSeeder::class,
             MaterialModelSeeder::class,
-            // OrderSeeder::class,
-            // FitingDateSeeder::class,
-            // PrepaidSeeder::class,
+            OrderSeeder::class,
+            FitingDateSeeder::class,
+            PrepaidSeeder::class,
         ]);
     }
 }
