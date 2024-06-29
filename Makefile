@@ -44,7 +44,8 @@ delete-name: docker-clear-images-name
 
 
 # shortcuts
-start: docker-up composer-install key-storage npm-install
+start: docker-up composer-install key-storage
+#npm-install
 stop: docker-down
 restart: stop start
 rebuild: stop build start 

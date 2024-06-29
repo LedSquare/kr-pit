@@ -22,7 +22,8 @@ class ClothesModel extends Model
 
     public function materials(): BelongsToMany
     {
-        return $this->belongsToMany(Material::class, 'clothes_model_materials');
+        return $this->belongsToMany(Material::class, 'clothes_model_materials')
+            ->withPivot('color');
     }
 
 }

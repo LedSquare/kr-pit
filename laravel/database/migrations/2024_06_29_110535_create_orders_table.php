@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->foreignIdFor(ClothesModel::class, 'clothes_model_id');
             $table->date('completion_date');
             $table->boolean('status');
-            $table->float('final_price');
+            $table->float('final_price')->nullable();
         });
     }
 
