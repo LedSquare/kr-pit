@@ -1,0 +1,1 @@
+install.packages(c("DBI", "RPostgres", "dbplyr", "glue", "dplyr"))

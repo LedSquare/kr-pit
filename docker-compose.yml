@@ -54,7 +54,24 @@ services:
     hostname: adminer
     networks:
       - krnet
-      
+
+  rbase:
+    image: ${PROJECT}_rbase
+    build:
+      context: .
+      dockerfile: docker/rbase/Dockerfile.rbase
+    ports:
+      - 8787:8787
+    environment:
+      PASSWORD: 123123
+    volumes:
+    - ./.rstudio_config:/home/rstudio/.config/rstudio
+    - ./rworkspace:/home/rstudio/rworkspace
+    hostname: rbase
+    container_name: ${PROJECT}_rbase
+    networks:
+      - krnet
+
 #------------
 
 networks:

@@ -25,7 +25,7 @@ class OrderSeeder extends Seeder
                 $model = $models[array_rand($arr_models)];
                 $client->orders()->create([
                     'clothes_model_id' => $model->id,
-                    'completion_date' => Carbon::now()->addDays(rand(7, 14)),
+                    'completion_date' => Carbon::now()->addDays(rand(5, 14)),
                     'status' => $statuses->random(1)[0],
                     'final_price' => $model->price,
                 ]);

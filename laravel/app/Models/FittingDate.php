@@ -20,6 +20,8 @@ class FittingDate extends Model
         'date' => 'date',
     ];
 
+    public $timestamps = false;
+
     public function order(): BelongsTo
     {
         return $this->belongsTo(Order::class, 'order_id');
