@@ -35,6 +35,8 @@ services:
       context: .
       dockerfile: docker/psql/Dockerfile.postgresql
     restart: unless-stopped
+    ports:
+      - 6666:5432
     environment:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_DATABASE}

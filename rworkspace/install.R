@@ -1,1 +1,1 @@
-install.packages(c("DBI", "RPostgres", "dbplyr", "glue", "dplyr"))
+install.packages(c("DBI", "RPostgres", "dbplyr", "glue", "dplyr", "ggplot2"))
